@@ -91,9 +91,11 @@ public abstract class BaseProgress extends View{
 
     public void setProgress(float progress) {
         this.progress = progress;
+        this.setText(progress + "%");
         if (this.progress > getMax()) {
            this.progress = getMax();
         }
+      
         invalidate();
     }
 
