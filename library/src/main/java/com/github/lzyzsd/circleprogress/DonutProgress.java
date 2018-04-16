@@ -169,6 +169,16 @@ public class DonutProgress extends BaseProgress {
         digits = attributes.getInt(R.styleable.DonutProgress_donut_progress_digits, 0);
         setFormatter();
     }
+    
+    public void setProgress(float progress) {
+        this.progress = progress;
+        this.setText(progress + "%");
+        if (this.progress > getMax()) {
+           this.progress = getMax();
+        }
+      
+        invalidate();
+    }
 
     @Override
     public void invalidate() {
