@@ -172,7 +172,7 @@ public class DonutProgress extends BaseProgress {
     
     public void setProgress(float progress) {
         this.progress = progress;
-        this.setText(progress + "%");
+        this.setText(Math.round(progress) + "%");
         if (this.progress > getMax()) {
            this.progress = getMax();
         }
